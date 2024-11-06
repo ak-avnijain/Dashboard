@@ -1,18 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Layout from './components/shared/layout'
-import Dashboard from './components/Dashboard'
-import Products from './components/Products'
+import React from 'react'
+import PersonDetails from './PersonDetails'
+
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Dashboard />} />
-                    <Route path="products" element={<Products />} />
-                </Route>
-                <Route path="login" element={<div>this is login page</div>} />
-            </Routes>
-        </Router>
+        <div className="App">
+            <PersonDetails />
+        </div>
     )
 }
 
