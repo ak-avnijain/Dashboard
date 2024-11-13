@@ -1,18 +1,39 @@
 import React from 'react'
 
 const ExtraDetails = () => {
+    const files = [
+        { src: 'image1.jpg', alt: 'Detail 1' },
+        { src: 'image2.png', alt: 'Detail 2' },
+        { src: 'document.pdf', alt: 'Detail 3' },
+        { src: 'image4.jpg', alt: 'Detail 4' },
+        { src: 'image5.png', alt: 'Detail 5' }
+    ]
+
     return (
-        <div className="w-full max-w-screen-lg mx-auto mt-6 bg-gray-50 p-6 rounded-lg shadow-md">
+        <div className="w-full mx-auto mt-6 bg-gray-50 p-6 rounded-lg shadow-md">
             {/* Title */}
             <h2 className="text-2xl font-semibold text-gray-700">Extra Details</h2>
 
-            {/* Image Section */}
+            {/* File Section */}
             <div className="flex flex-wrap gap-4 mt-4">
-                <img src="image1.jpg" alt="Detail 1" className="w-24 h-24 rounded shadow" />
-                <img src="image2.jpg" alt="Detail 2" className="w-24 h-24 rounded shadow" />
-                <img src="image3.jpg" alt="Detail 3" className="w-24 h-24 rounded shadow" />
-                <img src="image4.jpg" alt="Detail 4" className="w-24 h-24 rounded shadow" />
-                <img src="image5.jpg" alt="Detail 5" className="w-24 h-24 rounded shadow" />
+                {files.map((file, index) => (
+                    <a
+                        key={index}
+                        href={file.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-24 h-24 rounded shadow"
+                    >
+                        {/* Show different icons or elements for PDFs */}
+                        {file.src.endsWith('.pdf') ? (
+                            <div className="w-24 h-24 flex items-center justify-center bg-gray-200 text-gray-700">
+                                PDF
+                            </div>
+                        ) : (
+                            <img src={file.src} alt={file.alt} className="w-24 h-24 rounded shadow" />
+                        )}
+                    </a>
+                ))}
             </div>
         </div>
     )
