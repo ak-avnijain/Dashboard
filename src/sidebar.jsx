@@ -66,7 +66,7 @@ const Sidebar = () => {
 
             {/* Main Content */}
             <div className="flex-1 ml-0 md:ml-64 transition-margin duration-300">
-                <div className="p-4">
+                <div className="p-5">
                     {/* Hamburger Icon for Mobile */}
                     <div className="md:hidden">
                         <button onClick={toggleSidebar} className="text-blue-900 p-2 focus:outline-none">
